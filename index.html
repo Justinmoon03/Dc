@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discount Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      text-align: center;
+      padding: 50px;
+    }
+    .discount-box {
+      background-color: #fff;
+      border: 2px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin: 0 auto;
+    }
+    .discount-box h1 {
+      font-size: 24px;
+      color: #333;
+    }
+    .discount-box p {
+      font-size: 18px;
+      color: #555;
+    }
+    .discount {
+      font-size: 32px;
+      color: #e74c3c;
+      font-weight: bold;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="discount-box">
+    <h1>🎁 Discount Special</h1>
+    <p>Potongan harga acak untukmu! Jangan lewatkan kesempatan ini.</p>
+    <p class="discount" id="discountAmount">Loading...</p>
+    <button onclick="generateDiscount()">Dapatkan Potongan!</button>
+  </div>
+
+  <script>
+    function generateDiscount() {
+      // Menghasilkan angka acak antara 10% dan 50%
+      const discount = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
+      
+      // Menampilkan potongan diskon di elemen dengan id "discountAmount"
+      document.getElementById("discountAmount").innerText = `${discount}% OFF`;
+    }
+
+    // Panggil fungsi generateDiscount ketika halaman dimuat pertama kali
+    window.onload = generateDiscount;
+  </script>
+
+</body>
+</html>
